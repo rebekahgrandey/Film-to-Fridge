@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import "./CreateRecipeForm.css";
+import { useNavigate, useParams } from "react-router-dom";
+import "./RecipeEditForm.css";
 
-export const CreateRecipeForm = () => {
+export const RecipeEditForm = () => {
+
+
   const [films, setFilms] = useState([]);
   const [recipeCategories, setRecipeCategories] = useState([]);
   const [userId, setUserId] = useState(0);
@@ -17,6 +19,7 @@ export const CreateRecipeForm = () => {
     userId: ""
   });
   const navigate = useNavigate();
+  const { recipeId } = useParams()
 
   const localFilmUser = localStorage.getItem("film_user");
   const filmUserObject = JSON.parse(localFilmUser);
@@ -27,11 +30,12 @@ export const CreateRecipeForm = () => {
   }, []);
 
   
-  const saveNewRecipe = (event) => {
+  const handleSaveButtonClick = (event) => {
     event.preventDefault();
     
     userChoices.userId = userId
 
+  
     if (
       userChoices.filmId &&
       userChoices.name &&
@@ -41,13 +45,13 @@ export const CreateRecipeForm = () => {
       userChoices.instructions &&
       userChoices.recipeCategoryId
     )
-      fetch(`http://localhost:8088/recipes`, {
-        method: "POST",
+      fetch(`http://localhost:8088/recipes/${recipeId}`, {
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(userChoices),
-      }).then(navigate("/"));
+      }).then(navigate("/recipes"));
   };
 
 
@@ -75,7 +79,7 @@ export const CreateRecipeForm = () => {
 
   return (
     <form className="product-form">
-      <h2 className="product-form-title">Add A New Recipe</h2>
+      <h2 className="product-form-title">Edit Recipe</h2>
       <h4 className="product-form-subhead">All fields required</h4>
 
       <fieldset>
@@ -95,6 +99,7 @@ export const CreateRecipeForm = () => {
             {films.map((film) => {
               return (
                 <option
+                  //? diff btwn key and value here
                   id={film.id}
                   key={film.id}
                   value={film.id}
@@ -243,10 +248,10 @@ export const CreateRecipeForm = () => {
         className="recipe-form-button"
         onClick={(event) => {
           saveLocalUser()
-          saveNewRecipe(event);
+          handleSaveButtonClick(event);
         }}
       >
-        Submit
+        Submit Edits
       </button>
     </form>
   );
