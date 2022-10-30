@@ -1,0 +1,14 @@
+img.user-recipe-image {
+    border-radius: 8px;
+    width: 10em;
+  }
+
+.user-recipes-container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.user-recipe__link {
+    margin-right: 20px;
+}
