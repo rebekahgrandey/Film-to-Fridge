@@ -117,12 +117,12 @@ export const CreateRecipeForm = () => {
             className="form-recipe-name-box"
             type="text"
             id="recipe-name"
-            value={userChoices.description}
+            value={userChoices.name}
             placeholder="Enter brief description"
             required
             onChange={(event) => {
               const copy = { ...userChoices };
-              copy.description = event.target.value;
+              copy.name = event.target.value;
               setUserChoices(copy);
             }}
           />
@@ -138,12 +138,12 @@ export const CreateRecipeForm = () => {
             className="form-description-box"
             type="text"
             id="product-name"
-            value={userChoices.name}
+            value={userChoices.description}
             placeholder="Please enter full recipe name"
             required
             onChange={(event) => {
               const copy = { ...userChoices };
-              copy.name = event.target.value;
+              copy.description = event.target.value;
               setUserChoices(copy);
             }}
           />

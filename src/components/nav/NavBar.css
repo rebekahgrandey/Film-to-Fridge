@@ -1,0 +1,36 @@
+.navbar {
+    display:flex;
+    list-style: none;
+
+}
+
+.navbar__logo {
+    color: black;
+    font-size: large;
+    font-weight: 300;
+    margin-right: 3em;
+    }
+
+.navbar__item {
+color: blue;
+margin-right: 3em;
+}
+
+
+a:link {
+    text-decoration: none;
+  }
+  
+  a:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  a:hover {
+    text-decoration: none;
+    color: green;
+  }
+  
+  a:active {
+    text-decoration: underline;
+  }

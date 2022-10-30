@@ -23,19 +23,25 @@ export const RecipeEditForm = () => {
 
   const localFilmUser = localStorage.getItem("film_user");
   const filmUserObject = JSON.parse(localFilmUser);
-  
-  
+
   useEffect(() => {
     setUserId(filmUserObject.id);
   }, []);
 
+  useEffect(() => {
+    fetch(`http://localhost:8088/recipes/${recipeId}`)
+      .then((response) => response.json())
+      .then((recipeIdArray) => {
+        setUserChoices(recipeIdArray);
+      });
+  }, []);
   
   const handleSaveButtonClick = (event) => {
     event.preventDefault();
     
     userChoices.userId = userId
 
-  
+
     if (
       userChoices.filmId &&
       userChoices.name &&
@@ -51,7 +57,7 @@ export const RecipeEditForm = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(userChoices),
-      }).then(navigate("/recipes"));
+      }).then(navigate("/"));
   };
 
 
@@ -87,6 +93,7 @@ export const RecipeEditForm = () => {
           <select
             className="films"
             id="film-select"
+            value={userChoices.filmId}
             onChange={(event) => {
               const copy = { ...userChoices };
               copy.filmId = parseInt(event.target.value);
@@ -99,7 +106,6 @@ export const RecipeEditForm = () => {
             {films.map((film) => {
               return (
                 <option
-                  //? diff btwn key and value here
                   id={film.id}
                   key={film.id}
                   value={film.id}
@@ -113,6 +119,8 @@ export const RecipeEditForm = () => {
         </div>
       </fieldset>
 
+      
+
       <fieldset>
         <div className="form-group">
           <label htmlFor="recipe-name" className="recipe-form-label">
@@ -122,12 +130,11 @@ export const RecipeEditForm = () => {
             className="form-recipe-name-box"
             type="text"
             id="recipe-name"
-            value={userChoices.description}
-            placeholder="Enter brief description"
+            value={userChoices.name}
             required
             onChange={(event) => {
               const copy = { ...userChoices };
-              copy.description = event.target.value;
+              copy.name = event.target.value;
               setUserChoices(copy);
             }}
           />
@@ -143,12 +150,11 @@ export const RecipeEditForm = () => {
             className="form-description-box"
             type="text"
             id="product-name"
-            value={userChoices.name}
-            placeholder="Please enter full recipe name"
+            value={userChoices.description}
             required
             onChange={(event) => {
               const copy = { ...userChoices };
-              copy.name = event.target.value;
+              copy.description = event.target.value;
               setUserChoices(copy);
             }}
           />

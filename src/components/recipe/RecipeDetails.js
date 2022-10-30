@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import "./RecipeDetails.css";
 
 export const RecipeDetails = () => {
   const { recipeId } = useParams();
   const [recipe, updateRecipe] = useState({});
-  const [allRecipes, setAllRecipes] = useState([])
+  const [allRecipes, setAllRecipes] = useState([]);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(
@@ -23,26 +24,21 @@ export const RecipeDetails = () => {
   const filmUserObject = JSON.parse(localFilmUser);
 
   const getAllRecipes = () => {
-      fetch(`http://localhost:8088/recipes`)
-        .then((response) => response.json())
-        .then((allRecipesArray) => {
-          setAllRecipes(allRecipesArray);
-        });
-    
-  }
+    fetch(`http://localhost:8088/recipes`)
+      .then((response) => response.json())
+      .then((allRecipesArray) => {
+        setAllRecipes(allRecipesArray);
+      });
+  };
 
   const deleteRecipe = () => {
-    fetch(`http://localhost:8088/recipes/${recipeId}`,
-    {
-      method: "DELETE"
-    })
-    .then(() => {
-      getAllRecipes()
-    }
-
-    )
-  }
-
+    fetch(`http://localhost:8088/recipes/${recipeId}`, {
+      method: "DELETE",
+    }).then(() => {
+      getAllRecipes();
+    });
+  };
+  
   return (
     <div className="recipe-details-container">
       <h1 className="recipe-details-name">
@@ -52,35 +48,37 @@ export const RecipeDetails = () => {
       <img src={recipe.imageUrl} className="recipe-details-image" />
 
       {recipe.userId === filmUserObject.id ? (
-        <>
-          <Link to={`/recipes/${recipe.id}/edit`}>
-            <h5>Edit</h5>
+        <div className="recipe-details-button-container">
+          <Link to={`/recipes/edit/${recipe.id}`}>
+            <h5 className="edit-btn">Edit</h5>
           </Link>{" "}
           <button
-            onClick={(event) => {
-              deleteRecipe(event)
-              navigate("/")
+            onClick={() => {
+              deleteRecipe();
+              navigate("/");
             }}
           >
             Delete
           </button>
-        </>
+        </div>
       ) : (
         <></>
       )}
 
-      <div className="recipe-details-description">{recipe.description}</div>
-      <div className="recipe-details-ingredients">{recipe.ingredients}</div>
-      <div className="recipe-details-instructions">{recipe.instructions}</div>
+  {/* if recipe.description.contains... then format */}
+
+      <div className="recipe-details-description">
+        <h3>DESCRIPTION</h3>
+        {recipe.description}
+      </div>
+      <div className="recipe-details-ingredients">
+        <h3>INGREDIENTS</h3>
+        {recipe.ingredients}
+      </div>
+      <div className="recipe-details-instructions">
+        <h3>INSTRUCTIONS</h3>
+        {recipe.instructions}
+      </div>
     </div>
   );
 };
-
-//     return <section className="employee">
-//     <header>{employee?.user?.fullName}</header>
-//     <div>Email: {employee?.user?.email}</div>
-//     <div>Specialty: {employee.specialty}</div>
-//     <div>Rate: {employee.rate}</div>
-//     <footer>Currently working on {employee?.employeeTickets?.length}</footer>
-// </section>
-// }
