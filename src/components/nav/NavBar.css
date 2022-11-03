@@ -1,23 +1,5 @@
-.navbar {
-    display:flex;
-    list-style: none;
 
-}
-
-.navbar__logo {
-    color: black;
-    font-size: large;
-    font-weight: 300;
-    margin-right: 3em;
-    }
-
-.navbar__item {
-color: blue;
-margin-right: 3em;
-}
-
-
-a:link {
+/* a:link {
     text-decoration: none;
   }
   
@@ -33,4 +15,4 @@ a:link {
   
   a:active {
     text-decoration: underline;
-  }
+  } */
