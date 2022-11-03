@@ -18,8 +18,8 @@ export const ApplicationViews = () => {
             <UserHomePage />
             </>
           }
-        >
-        </Route>
+        />
+        
           <Route path="/add-recipe" element={<CreateRecipeForm />} />
           <Route path="/recipes" element={<ByRecipe />} />
           <Route path="/movies" element={<ByMovie />} />
@@ -29,3 +29,5 @@ export const ApplicationViews = () => {
     </>
   );
 };
+
+//? nesting here

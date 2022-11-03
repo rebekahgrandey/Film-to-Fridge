@@ -2,32 +2,27 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./UserRecipes.css";
 
-export const UserRecipes = ({ localUser }) => {
+export const UserRecipes = ({ localUser, recipes }) => {
   const [userRecipes, setUserRecipes] = useState([]);
-
-  useEffect(() => {
-    fetch(`http://localhost:8088/recipes?_expand=user`)
-      .then((response) => response.json())
-      .then((userRecipesArray) => {
-        setUserRecipes(userRecipesArray);
-      });
-  }, []);
 
   return (
     <>
-      <h2>Your Recipes</h2>
-      <div className="user-recipes-container">
-        {userRecipes.map((userRecipe) => {
-          if (localUser.id === userRecipe.userId)
-            return (
-                <Link className="user-recipe__link" key={userRecipe.id} to={`/recipes/${userRecipe.id}`}>
+      <div className="user-recipes-text-container">
+      <h1 className="user-recipes-title">Your Recipes</h1>
+      <div className="user-recipes-text">
+        {recipes.map((recipe) => {
+          if (localUser.id === recipe.userId)
+               return <>
+                <Link className="user-recipe__link" key={recipe.id} to={`/recipes/${recipe.id}`}>
                     <div className="user-recipe-box">
-                    <img src={userRecipe.imageUrl} className="user-recipe-image" />
-                <h3 className="user-recipe-name">{userRecipe.name}</h3>
+                    <img src={recipe.imageUrl} className="user-recipe-image" />
+                <h3 className="user-recipe-name">{recipe.name}</h3>
               </div>
               </Link>
-            );
+              </>
+            
         })}
+      </div>
       </div>
     </>
   );

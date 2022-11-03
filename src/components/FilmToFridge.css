@@ -1,0 +1,14 @@
+body {
+    background: linear-gradient(to bottom, #ffdf78 0%, #ff6633 100%);
+    padding-top: 125px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+html {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+ }

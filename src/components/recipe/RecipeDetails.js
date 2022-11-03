@@ -6,6 +6,7 @@ export const RecipeDetails = () => {
   const { recipeId } = useParams();
   const [recipe, updateRecipe] = useState({});
   const [allRecipes, setAllRecipes] = useState([]);
+  const [favorites, setAllFavorites] = useState([]);
 
   const navigate = useNavigate();
 
@@ -19,6 +20,22 @@ export const RecipeDetails = () => {
         updateRecipe(singleRecipe);
       });
   }, [recipeId]);
+
+  const getAllFavorites = () => {
+    fetch(`http://localhost:8088/userFavorites`)
+      .then((response) => response.json())
+      .then((userFavoritesArray) => {
+        setAllFavorites(userFavoritesArray)
+      });
+  }
+  
+  useEffect(() => {
+    fetch(`http://localhost:8088/userFavorites`)
+      .then((response) => response.json())
+      .then((userFavoritesArray) => {
+        setAllFavorites(userFavoritesArray);
+      });
+  }, []);
 
   const localFilmUser = localStorage.getItem("film_user");
   const filmUserObject = JSON.parse(localFilmUser);
@@ -38,7 +55,11 @@ export const RecipeDetails = () => {
       getAllRecipes();
     });
   };
-  
+
+const favoritesConfirmation = () => {
+  return (<h5>Added to Favorites!</h5>)
+}
+
   return (
     <div className="recipe-details-container">
       <h1 className="recipe-details-name">
@@ -62,10 +83,27 @@ export const RecipeDetails = () => {
           </button>
         </div>
       ) : (
-        <></>
+        <>
+          <button
+            onClick={() => {
+              fetch(`http://localhost:8088/userFavorites`, {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  userId: filmUserObject.id,
+                  recipeId: recipeId,
+                }),
+              })
+                .then((response) => response.json())
+                .then(alert("Added to favorites"));
+            }}
+          >
+            Favorite
+          </button>
+        </>
       )}
-
-  {/* if recipe.description.contains... then format */}
 
       <div className="recipe-details-description">
         <h3>DESCRIPTION</h3>
