@@ -5,6 +5,7 @@ import { ByRecipe } from "../recipeLists/ByRecipe";
 import { RecipeEditForm } from "../recipe/RecipeEditForm";
 import { UserHomePage } from "../UserPages/UserHomePage";
 import { ByMovie } from "../recipeLists/ByMovie";
+import { UserProfile } from "../UserPages/UserProfile";
 
 export const ApplicationViews = () => {
   return (
@@ -25,6 +26,7 @@ export const ApplicationViews = () => {
           <Route path="/movies" element={<ByMovie />} />
           <Route path="/recipes/:recipeId" element={<RecipeDetails />} />
           <Route path="/recipes/edit/:recipeId" element={ <RecipeEditForm /> } />
+          {/* <Route path="/:userId" element={ <UserProfile /> } /> */}
       </Routes>
     </>
   );

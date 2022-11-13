@@ -13,6 +13,34 @@
     
 }
 
+.details-btn {
+    height: 35px;
+    width: 80px;
+    margin: 1rem 1rem 1rem 0;
+    border-color: #FF9659;
+    background-color: #ff7b39;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+    color: white;
+}
+
+.favorites-btn {
+    height: 35px;
+    width: 80px;
+    margin: 1rem 1rem 1rem 0;
+    border-color: #FF9659;
+    background-color: #ff7b39;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+    color: white;
+}
+
+.delete {
+    color:red;
+}
+
 .recipe-details-name {
     font-size: 55px;
     margin-top: 19px;

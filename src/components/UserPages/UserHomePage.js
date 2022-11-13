@@ -42,7 +42,7 @@ export const UserHomePage = () => {
     })
   }
  <div className="content-container">
-< ControlledCarousel />
+{/* < ControlledCarousel recipes={recipes} /> */}
 < FeaturedRecipes recipes={recipes} />
 < UserFavorites localUser={filmUserObject} recipes={recipes} users={users} />
 < UserRecipes localUser={filmUserObject} recipes={recipes} />
