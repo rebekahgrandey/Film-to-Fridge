@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import { FavoriteButton } from "../buttons/favoriteButton";
 import "./RecipeDetails.css";
 
 export const RecipeDetails = () => {
   const { recipeId } = useParams();
   const [recipe, updateRecipe] = useState({});
   const [allRecipes, setAllRecipes] = useState([]);
-  const [favorites, setAllFavorites] = useState([]);
+  const [userFavorites, setUserFavorites] = useState([]);
 
   const navigate = useNavigate();
 
@@ -21,24 +22,16 @@ export const RecipeDetails = () => {
       });
   }, [recipeId]);
 
-  const getAllFavorites = () => {
-    fetch(`http://localhost:8088/userFavorites`)
-      .then((response) => response.json())
-      .then((userFavoritesArray) => {
-        setAllFavorites(userFavoritesArray)
-      });
-  }
-  
-  useEffect(() => {
-    fetch(`http://localhost:8088/userFavorites`)
-      .then((response) => response.json())
-      .then((userFavoritesArray) => {
-        setAllFavorites(userFavoritesArray);
-      });
-  }, []);
-
   const localFilmUser = localStorage.getItem("film_user");
   const filmUserObject = JSON.parse(localFilmUser);
+
+  useEffect(() => {
+    fetch(`http://localhost:8088/userFavorites?userId=${filmUserObject.id}`)
+      .then((response) => response.json())
+      .then((userFavoritesArray) => {
+        setUserFavorites(userFavoritesArray);
+      });
+  }, []);
 
   const getAllRecipes = () => {
     fetch(`http://localhost:8088/recipes`)
@@ -56,9 +49,7 @@ export const RecipeDetails = () => {
     });
   };
 
-const favoritesConfirmation = () => {
-  return (<h5>Added to Favorites!</h5>)
-}
+
 
   return (
     <div className="recipe-details-container">
@@ -66,14 +57,22 @@ const favoritesConfirmation = () => {
         {recipe.name} by {recipe?.user?.username}
       </h1>
       <h4 className="recipe-details-from">From {recipe?.film?.name}</h4>
-      <img src={recipe.imageUrl} className="recipe-details-image" />
+      <div>
+        <img src={recipe.imageUrl} className="recipe-details-image" />
+      </div>
 
       {recipe.userId === filmUserObject.id ? (
         <div className="recipe-details-button-container">
-          <Link to={`/recipes/edit/${recipe.id}`}>
-            <h5 className="edit-btn">Edit</h5>
-          </Link>{" "}
           <button
+            className="details-btn"
+            onClick={() => {
+              navigate(`/recipes/edit/${recipe.id}`);
+            }}
+          >
+            Edit
+          </button>
+          <button
+            className="details-btn delete"
             onClick={() => {
               deleteRecipe();
               navigate("/");
@@ -83,27 +82,25 @@ const favoritesConfirmation = () => {
           </button>
         </div>
       ) : (
-        <>
-          <button
-            onClick={() => {
-              fetch(`http://localhost:8088/userFavorites`, {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                  userId: filmUserObject.id,
-                  recipeId: recipeId,
-                }),
-              })
-                .then((response) => response.json())
-                .then(alert("Added to favorites"));
-            }}
-          >
-            Favorite
-          </button>
-        </>
-      )}
+        <FavoriteButton userFavorites={userFavorites} filmUserObject={filmUserObject} recipeId={recipeId} />
+        // userFavorites.map((userFavorite) => {
+        //   if (userFavorite.recipeId === recipeId) {
+        //     return (
+        //       <>
+        //         <h4>In Favorites</h4>
+        //       </>
+        //     );
+        //   } else {
+        //     return < FavoriteButton filmUserObject={filmUserObject} recipeId={recipeId} />
+        //   }
+        // })
+      )
+      }
+
+      {
+        
+      }
+    
 
       <div className="recipe-details-description">
         <h3>DESCRIPTION</h3>

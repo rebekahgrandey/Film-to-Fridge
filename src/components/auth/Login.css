@@ -9,9 +9,15 @@
 }
 
 .btn-login {
-    border-radius: 10px;
-    padding: 5px 8px;
-    margin-top: 1rem;
+    height: 35px;
+    width: 80px;
+    margin: 1rem 1rem 1rem 0;
+    border-color: #FF9659;
+    background-color: #ff7b39;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+    color: white;
 }
 
 input.form-control {
@@ -30,5 +36,5 @@ margin:auto;
 
 .link--register {
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 6px;
 }

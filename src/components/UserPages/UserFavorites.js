@@ -4,6 +4,7 @@ import "./UserFavorites.css";
 
 export const UserFavorites = ({ localUser, users, recipes }) => {
   const [allFavorites, setAllFavorites] = useState([]);
+  const [favorite, setFavorite] = useState(false)
 
   useEffect(() => {
     fetch(`http://localhost:8088/userFavorites?&_expand=user&_expand=recipe`)
@@ -12,6 +13,8 @@ export const UserFavorites = ({ localUser, users, recipes }) => {
         setAllFavorites(userFavoritesArray);
       });
   }, []);
+
+
 
   return (
     <>

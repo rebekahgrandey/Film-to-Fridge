@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./UserRecipes.css";
 
 export const UserRecipes = ({ localUser, recipes }) => {
-  const [userRecipes, setUserRecipes] = useState([]);
 
   return (
     <>
