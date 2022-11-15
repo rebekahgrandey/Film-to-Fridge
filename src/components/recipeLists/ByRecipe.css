@@ -1,10 +1,32 @@
+.recipe-list-container {
+    margin-left: 3%;
+    margin-top: 30px;
+    width: 40%;
+    background-color: #ffff;
+    border-radius: 7px;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    padding-top: 3px;
+    padding-bottom: 25px;
+    padding-left: 3%;
+}
+
 .recipe-list-title {
-    font-size: 40px;
-    margin-left: 40px;
+    font-size: 350%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 3%;
+    color: #ff6633;
+    font-family: 'Fredoka One', display;
 }
 
 .recipe__link {
     font-size: 20px;
-    margin-left: 40px;
+    margin-left: 20px;
     margin-bottom: 80px;
+}
+
+.by-recipe-name {
+    margin-top: 8px;
+    font-size: 130%;
+    color: #ff6633;
 }

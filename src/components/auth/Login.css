@@ -3,7 +3,7 @@
     height: 500px;
     border-radius: 10px;
     margin: auto;
-    padding: 11rem;
+    padding: 8rem;
     background-color: white;
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
@@ -21,7 +21,7 @@
 }
 
 input.form-control {
-width: 160px;
+width: 200px;
 border-radius: 10px;
 margin:auto;
 }
@@ -37,4 +37,39 @@ margin:auto;
 .link--register {
     text-align: center;
     margin-top: 6px;
+}
+
+.login-title {
+    font-family: 'Fredoka One', display;
+    font-size: 40px;
+    color:#ff7b39;
+    text-shadow: 2px 2px #7e7e7e1c;
+    margin-top: 10px;
+}
+
+.login-subhead {
+    font-family: 'Raleway', sans-serif;
+    font-size: 28px;
+    margin-top: 30px;
+}
+
+.register-container {
+    width: 600px;
+    height: 500px;
+    border-radius: 10px;
+    margin: auto;
+    padding: 8rem;
+    background-color: white;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+.register-title {
+    font-family: 'Fredoka One', display;
+    font-size: 50px;
+    color:#ff7b39;
+    text-shadow: 2px 2px #7e7e7e1c;  
+}
+
+.login-icon {
+    width: 60px;
 }

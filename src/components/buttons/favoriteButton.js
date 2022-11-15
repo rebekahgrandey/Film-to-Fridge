@@ -1,11 +1,8 @@
-export const FavoriteButton = ({ filmUserObject, recipeId, userFavorites }) => {
-  
-  function findId(idRecipe) {
-    return idRecipe === recipeId
-  }
-  console.log(idRecipe)
-  
-  if (userFavorites.find(findId)) {
+import { useNavigate } from "react-router-dom";
+import "./favoriteButton.css"
+
+export const FavoriteButton = ({ filmUserObject, recipeId }) => {
+  const navigate = useNavigate()
   return (
         <>
           <button
@@ -20,13 +17,12 @@ export const FavoriteButton = ({ filmUserObject, recipeId, userFavorites }) => {
                   userId: filmUserObject.id,
                   recipeId: recipeId,
                 }),
-              }).then((response) => response.json());
+              }).then((response) => response.json())
+              .then(navigate("/"))
             }}
           >
-            Favorite
+            <img src="/images/heart-favorite.svg" className="fave-icon"/>Add to Favorites
           </button>
         </>
       );
-} else {
-  <h1>hi</h1>
-}}
+}

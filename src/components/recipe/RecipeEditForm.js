@@ -68,7 +68,7 @@ export const RecipeEditForm = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:8088/films`)
+    fetch(`http://localhost:8088/films?_sort=name`)
       .then((response) => response.json())
       .then((filmArray) => {
         setFilms(filmArray);
@@ -84,9 +84,10 @@ export const RecipeEditForm = () => {
   }, []);
 
   return (
-    <form className="product-form">
-      <h2 className="product-form-title">Edit Recipe</h2>
-      <h4 className="product-form-subhead">All fields required</h4>
+    <div className="recipe-form-container">
+      <form className="recipe-form">
+      <h2 className="recipe-form-title">Edit Recipe</h2>
+      <h4 className="recipe-form-subhead">All fields required</h4>
 
       <fieldset>
         <div className="form-group">
@@ -122,11 +123,12 @@ export const RecipeEditForm = () => {
       
 
       <fieldset>
-        <div className="form-group">
+        
           <label htmlFor="recipe-name" className="recipe-form-label">
             Recipe Name:
           </label>
-          <input
+          <div>
+            <input
             className="form-recipe-name-box"
             type="text"
             id="recipe-name"
@@ -142,12 +144,13 @@ export const RecipeEditForm = () => {
       </fieldset>
 
       <fieldset>
-        <div className="form-group">
-          <label htmlFor="product-name" className="product-form-label">
+        
+          <label htmlFor="recipe-name" className="recipe-form-label">
             Description:
           </label>
-          <input
-            className="form-description-box"
+          <div>
+            <textarea
+            className="form-description-box description"
             type="text"
             id="product-name"
             value={userChoices.description}
@@ -158,16 +161,18 @@ export const RecipeEditForm = () => {
               setUserChoices(copy);
             }}
           />
-        </div>
+          </div>
+        
       </fieldset>
 
       <fieldset>
-        <div className="form-group">
+        
           <label htmlFor="ingredients" className="recipe-form-label">
             Ingredients:
           </label>
-          <input
-            className="form-ingredients-box"
+          <div>
+          <textarea
+            className="form-ingredients-box ingredients"
             type="text"
             id="ingredients"
             value={userChoices.ingredients}
@@ -183,12 +188,13 @@ export const RecipeEditForm = () => {
       </fieldset>
 
       <fieldset>
-        <div className="form-group">
+        
           <label htmlFor="instructions" className="recipe-form-label">
             Instructions:
           </label>
-          <input
-            className="form-instructions-box"
+          <div>
+          <textarea
+            className="form-instructions-box instructions"
             type="text"
             id="instructions"
             value={userChoices.instructions}
@@ -204,11 +210,12 @@ export const RecipeEditForm = () => {
       </fieldset>
 
       <fieldset>
-        <div className="form-group">
+        
           <label htmlFor="imageUrl" className="recipe-form-label">
             Image URL:
           </label>
-          <input
+          <div>
+          <textarea
             className="form-imageUrl-box"
             type="text"
             id="imageUrl"
@@ -229,7 +236,7 @@ export const RecipeEditForm = () => {
           <div>Recipe Category</div>
           {recipeCategories.map((recipeCategory) => {
             return (
-              <div key={recipeCategory.id} className="recipe-form-radio">
+              <div key={recipeCategory.id}>
                 <label>
                   <input
                     type="radio"
@@ -242,7 +249,7 @@ export const RecipeEditForm = () => {
                       setUserChoices(copy);
                     }}
                   />
-                  {recipeCategory.name}
+                  <span className="recipe-form-radio">{recipeCategory.name}</span>
                 </label>
               </div>
             );
@@ -251,7 +258,7 @@ export const RecipeEditForm = () => {
       </fieldset>
 
       <button
-        className="recipe-form-button"
+        className="create-btn"
         onClick={(event) => {
           saveLocalUser()
           handleSaveButtonClick(event);
@@ -260,5 +267,6 @@ export const RecipeEditForm = () => {
         Submit Edits
       </button>
     </form>
+    </div>
   );
 };

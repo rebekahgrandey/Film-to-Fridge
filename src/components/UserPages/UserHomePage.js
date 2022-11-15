@@ -3,7 +3,6 @@ import { UserRecipes } from "./UserRecipes";
 import "./UserHomePage.css";
 import { FeaturedRecipes } from "../recipe/FeaturedRecipes";
 import { UserFavorites } from "./UserFavorites";
-import { ControlledCarousel } from "../Carousel/Carousel";
 
 export const UserHomePage = () => {
   const [users, setUsers] = useState([]);
@@ -36,18 +35,15 @@ export const UserHomePage = () => {
       return (
         <h2 
         key={user.id} className="home-welcome-message">
-          Welcome, {user.username}!
+          <img src="./images/waving-hand.svg" className="welcome-icon"/> Welcome, <span className="username">{user.username}!</span>
         </h2>
       );
     })
   }
  <div className="content-container">
-{/* < ControlledCarousel recipes={recipes} /> */}
 < FeaturedRecipes recipes={recipes} />
 < UserFavorites localUser={filmUserObject} recipes={recipes} users={users} />
 < UserRecipes localUser={filmUserObject} recipes={recipes} />
 </div> 
   </>;
 }
-
-//if i fetch something again in a child component instead of passing it from the parent is that "bad"? or is it just more efficient to pass props?

@@ -11,8 +11,15 @@
 
 .user-favorites-title {
     font-size: 300%;
+    font-family: 'Fredoka One', display;
     margin-top: 2%;
     margin-bottom: 2%;
+    color: #ff6633;
+}
+
+.user-favorite-name {
+    margin-top: 8px;
+    font-size: 130%;
     color: #ff6633;
 }
 

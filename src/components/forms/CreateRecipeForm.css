@@ -1,0 +1,64 @@
+.recipe-form {
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 12px;
+    background-color:rgba(255, 255, 255, 0.86);
+    border-radius: 7px;
+    padding-top: 3px;
+    padding-bottom: 8px;
+    padding-left: 3%;
+    width: 50%;
+}
+
+.recipe-form-title {
+    font-size: 300%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    color: #ff6633;
+
+}
+
+.recipe-form-label {
+    margin-right: 7px;
+    font-size: 18px;
+}
+
+.form-input-box {
+    border-radius: 7px;
+    background-color: #ffffff;
+}
+
+.description {
+    width: 400px;
+    height: 100px; 
+}
+
+.ingredients {
+    width: 400px;
+    height: 100px;
+}
+
+.instructions {
+    width: 400px;
+    height: 100px;
+}
+
+.films {
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.create-btn {height: 35px;
+    width: 200px;
+    margin: 0 1rem 1rem 0;
+    border-color: #FF9659;
+    background-color: #ff7b39;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+    color: white;
+}
+
+.radio-label {
+    margin-left: 8px;
+}
