@@ -5,13 +5,15 @@ export const NavBar = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="navbar bg-custom fixed-top navbar-expand-lg navbar-light bg-light py-4 shadow p-3 mb-5 bg-white rounded ">
+    <nav className="navbar bg-custom fixed-top navbar-expand-lg navbar-light bg-light py-2 shadow p-3 mb-5 bg-white rounded ">
       <a className="navbar-brand ml-5" href="/">
-        Film to Fridge
+      <div>
+      <img src="/images/theater.svg" className="homepage-login-icon"/><img src="/images/right-arrow.svg" className="homepage-login-icon"/><img src="/images/fridge.svg" className="homepage-login-icon"/>
+      </div>
       </a>
-      {/* <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button> */}
+  </button>
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav">
@@ -38,24 +40,3 @@ export const NavBar = () => {
     </nav>
   );
 };
-// <ul className="navbar">
-//     <li className="navbar__logo">
-//     <Link className="navbar__link" to="/">Film To Fridge</Link>
-//     </li>
-//     {/* <li className="navbar__item navbar__sort-by-movie">
-//         <Link className="navbar__link" to="/movies">Browse by Movie/Show</Link>
-//     </li> */}
-//     <li className="navbar__item navbar__sort-by-name">
-//         <Link className="navbar__link" to="/recipes">Browse by Recipe Name</Link>
-//     </li>
-//     <li className="navbar__item navbar__add-recipe">
-//         <Link className="navbar__link" to="/add-recipe">Add New Recipe</Link>
-//     </li>
-
-//     <li className="navbar__item navbar__logout">
-//         <Link className="navbar__link" to="" onClick={() => {
-//             localStorage.removeItem("film_user")
-//             navigate("/", { replace: true })
-//         }}>Logout</Link>
-//     </li>
-// </ul>

@@ -74,9 +74,9 @@ export const CreateRecipeForm = () => {
   }, []);
 
   return (
-    <form className="product-form">
-      <h2 className="product-form-title">Add A New Recipe</h2>
-      <h4 className="product-form-subhead">All fields required</h4>
+    <form className="recipe-form">
+      <h2 className="recipe-form-title">Add A New Recipe</h2>
+      <h4 className="recipe-form-subhead">All fields required</h4>
 
       <fieldset>
         <div className="form-group">
@@ -109,37 +109,39 @@ export const CreateRecipeForm = () => {
       </fieldset>
 
       <fieldset>
-        <div className="form-group">
+        
           <label htmlFor="recipe-name" className="recipe-form-label">
             Recipe Name:
           </label>
-          <input
-            className="form-recipe-name-box"
+          <div><textarea
+            className="form-input-box"
             type="text"
             id="recipe-name"
             value={userChoices.name}
-            placeholder="Enter brief description"
+            placeholder="Enter name"
+            autocomplete="off"
             required
             onChange={(event) => {
               const copy = { ...userChoices };
               copy.name = event.target.value;
               setUserChoices(copy);
             }}
-          />
-        </div>
+          /></div>
+        
       </fieldset>
 
       <fieldset>
-        <div className="form-group">
-          <label htmlFor="product-name" className="product-form-label">
+        
+          <label htmlFor="recipe-name" className="recipe-form-label">
             Description:
           </label>
-          <input
-            className="form-description-box"
+          <div><textarea
+            className="form-input-box description"
             type="text"
-            id="product-name"
+            id="recipe-name"
             value={userChoices.description}
-            placeholder="Please enter full recipe name"
+            placeholder="Enter recipe description"
+            autocomplete="off"
             required
             onChange={(event) => {
               const copy = { ...userChoices };
@@ -151,16 +153,17 @@ export const CreateRecipeForm = () => {
       </fieldset>
 
       <fieldset>
-        <div className="form-group">
+        
           <label htmlFor="ingredients" className="recipe-form-label">
             Ingredients:
           </label>
-          <input
-            className="form-ingredients-box"
+          <div><textarea
+            className="form-input-box ingredients"
             type="text"
             id="ingredients"
             value={userChoices.ingredients}
             placeholder="Enter ingredient list"
+            autocomplete="off"
             required
             onChange={(event) => {
               const copy = { ...userChoices };
@@ -172,16 +175,17 @@ export const CreateRecipeForm = () => {
       </fieldset>
 
       <fieldset>
-        <div className="form-group">
+      
           <label htmlFor="instructions" className="recipe-form-label">
             Instructions:
           </label>
-          <input
-            className="form-instructions-box"
+          <div><textarea
+            className="form-input-box instructions"
             type="text"
             id="instructions"
             value={userChoices.instructions}
             placeholder="Enter instructions"
+            autocomplete="off"
             required
             onChange={(event) => {
               const copy = { ...userChoices };
@@ -193,16 +197,17 @@ export const CreateRecipeForm = () => {
       </fieldset>
 
       <fieldset>
-        <div className="form-group">
+        
           <label htmlFor="imageUrl" className="recipe-form-label">
             Image URL:
           </label>
-          <input
-            className="form-imageUrl-box"
+          <div><textarea
+            className="form-input-box"
             type="text"
             id="imageUrl"
             value={userChoices.imageUrl}
             placeholder="Paste image URL here"
+            autocomplete="off"
             required
             onChange={(event) => {
               const copy = { ...userChoices };
@@ -231,7 +236,7 @@ export const CreateRecipeForm = () => {
                       setUserChoices(copy);
                     }}
                   />
-                  {recipeCategory.name}
+                  <span className="radio-label">{recipeCategory.name}</span>
                 </label>
               </div>
             );
@@ -240,7 +245,7 @@ export const CreateRecipeForm = () => {
       </fieldset>
 
       <button
-        className="recipe-form-button"
+        className="create-btn"
         onClick={(event) => {
           saveLocalUser()
           saveNewRecipe(event);

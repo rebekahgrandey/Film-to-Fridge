@@ -16,36 +16,25 @@ export const ByRecipe = () => {
   };
 
   useEffect(() => {
-  getAllRecipes();
+    getAllRecipes();
   }, []);
 
   return (
     <>
-      <h2 className="recipe-list-title">All Recipes</h2>
+      <div className="recipe-list-container">
+        <h2 className="recipe-list-title">All Recipes</h2>
 
-      {recipes.map((recipe) => {
-        // if (recipe.recipeCategoryId === 1)
-        return (
-          <div
-            key={recipe.id}
-            className="recipe-list-box"
-          >
-            <Link className="recipe__link" to={`/recipes/${recipe.id}`}>
-              {" "}
-              {recipe.name}{" "}
-            </Link>
-          </div>
-        )
-      })}
+        {recipes.map((recipe) => {
+          return (
+            <div key={recipe.id} className="recipe-list-box">
+              <Link className="recipe__link" to={`/recipes/${recipe.id}`}>
+                {" "}
+                <span className="by-recipe-name">{recipe.name}</span>{" "}
+              </Link>
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 };
-
-// if (honeyUserObject.staff) {
-//             // Return employee views
-//             return <EmployeeViews />
-//         }
-//         else {
-//             // Return customer service
-//             return <CustomerViews />
-//         }

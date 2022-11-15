@@ -10,3 +10,17 @@ img {
   .home-welcome-message {
     margin-left: 4%;
   }
+
+  a:hover {
+    text-decoration: none;
+    
+  }
+
+  .welcome-icon {
+    width: 40px;
+  }
+
+  .username {
+    font-weight: 700;
+    font-style: italic;
+  }

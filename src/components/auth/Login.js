@@ -32,15 +32,16 @@ export const Login = () => {
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
                     <div className="login-container">
-                        <h1>Film to Fridge</h1>
-                    <h2>Please sign in</h2>
+                        <img src="/images/theater.svg" className="login-icon"/><img src="/images/right-arrow.svg" className="login-icon"/><img src="/images/fridge.svg" className="login-icon"/>
+                        <h1 className="login-title">Film to Fridge</h1>
+                    <h2 className="login-subhead">Login Required</h2>
                     <fieldset className="login-fieldset">
-                        <label htmlFor="inputUsername"> Username </label>
+                        
                         <input type="username"
                             value={username}
                             onChange={evt => set(evt.target.value)}
                             className="form-control"
-                            placeholder="Username"
+                            placeholder="Enter Username"
                             required autoFocus />
                     </fieldset>
                     <fieldset>

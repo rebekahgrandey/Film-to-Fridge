@@ -12,7 +12,6 @@ export const FilmToFridge = () => {
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-//? the star
       <Route
         path="*"
         element={

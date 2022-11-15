@@ -10,6 +10,7 @@
 
 .user-recipes-title {
     font-size: 300%;
+    font-family: 'Fredoka One', display;
     color: #ff6633;
     margin-top: 2%;
     margin-bottom: 2%;
@@ -20,6 +21,12 @@
     flex-wrap: wrap;
     text-align: center;
     
+}
+
+.user-recipe-name {
+    margin-top: 8px;
+    font-size: 150%;
+    color: #ff6633;
 }
 
 img.user-recipe-image {

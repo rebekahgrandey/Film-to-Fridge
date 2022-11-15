@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { FavoriteButton } from "../buttons/favoriteButton";
+import { FavoriteButton } from "../buttons/FavoriteButton";
 import "./RecipeDetails.css";
 
 export const RecipeDetails = () => {
@@ -83,17 +83,6 @@ export const RecipeDetails = () => {
         </div>
       ) : (
         <FavoriteButton userFavorites={userFavorites} filmUserObject={filmUserObject} recipeId={recipeId} />
-        // userFavorites.map((userFavorite) => {
-        //   if (userFavorite.recipeId === recipeId) {
-        //     return (
-        //       <>
-        //         <h4>In Favorites</h4>
-        //       </>
-        //     );
-        //   } else {
-        //     return < FavoriteButton filmUserObject={filmUserObject} recipeId={recipeId} />
-        //   }
-        // })
       )
       }
 
@@ -103,15 +92,15 @@ export const RecipeDetails = () => {
     
 
       <div className="recipe-details-description">
-        <h3>DESCRIPTION</h3>
+        <h3 className="details-label">DESCRIPTION</h3>
         {recipe.description}
       </div>
       <div className="recipe-details-ingredients">
-        <h3>INGREDIENTS</h3>
+        <h3 className="details-label">INGREDIENTS</h3>
         {recipe.ingredients}
       </div>
       <div className="recipe-details-instructions">
-        <h3>INSTRUCTIONS</h3>
+        <h3 className="details-label">INSTRUCTIONS</h3>
         {recipe.instructions}
       </div>
     </div>

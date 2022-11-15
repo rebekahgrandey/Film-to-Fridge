@@ -15,7 +15,7 @@
 
 .details-btn {
     height: 35px;
-    width: 80px;
+    width: 100px;
     margin: 1rem 1rem 1rem 0;
     border-color: #FF9659;
     background-color: #ff7b39;
@@ -44,8 +44,32 @@
 .recipe-details-name {
     font-size: 55px;
     margin-top: 19px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+}
+
+.recipe-details-ingredients {
+    margin-top: 10px;
+    width: 90%;
+}
+
+.recipe-details-instructions {
+    margin-top: 10px;
+    width: 90%;
+}
+
+.details-label {
+    font-size: 30px;
+    color:#ff7b39;
+    font-family: 'Fredoka One', display;
 }
 
 .recipe-details-image {
     margin-top: 20px;
+}
+
+.favorites-btn {
+    font-size: 13px;
+    line-height: 14px;
+    width: 300px;
 }
