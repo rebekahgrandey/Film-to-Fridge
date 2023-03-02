@@ -1,6 +1,6 @@
 # Film to Fridge
 
-Film to Fridge is an app that allows users to make and share recipes from their favorite movies and TV shows. The user can create their own recipes and add them to the JSON database. The user can edit or delete their own recipes. All recipes in the database can be viewed by all users and are categorized by recipe type (food, drink, dessert) and alphebetical order.
+Film to Fridge is an app that allows users to make and share recipes from their favorite movies and TV shows. The user can create their own recipes and add them to the JSON database. The user can edit or delete their own recipes. All recipes in the database, viewable by all users, are categorized alphabetically and by recipe type (food, drink, dessert).
 
 JSON database required prior to running app: [https://github.com/rebekahgrandey/film-api](https://github.com/rebekahgrandey/film-api)
 
