@@ -18,7 +18,7 @@ Film to Fridge is an app that allows users to make and share recipes from their 
 <table>
   <tr>
     <td valign="top">
-      <a href="https://www.figma.com/file/uQRwpzxMnDd3eSjCPc9V5q/Film-to-Fridge?node-id=0%3A1&t=DG1k2PXvVGU04gee-0">Wireframe (Figma)</a>
+      <a href="https://www.figma.com/file/uQRwpzxMnDd3eSjCPc9V5q/Film-to-Fridge?node-id=0%3A1&t=DG1k2PXvVGU04gee-0" target="_blank">Wireframe (Figma)</a>
 
 [![Film to Fridge Wireframe](https://i.ibb.co/mqpcVJC/film-wireframe.jpg)](https://www.figma.com/file/uQRwpzxMnDd3eSjCPc9V5q/Film-to-Fridge?node-id=0%3A1&t=DG1k2PXvVGU04gee-0)
       
@@ -26,7 +26,7 @@ Film to Fridge is an app that allows users to make and share recipes from their 
   
 
 <td valign="top">
-  <a href="https://dbdiagram.io/d/6352a86e4709410195b3cc30">ERD (DbDiagram)</a>
+  <a href="https://dbdiagram.io/d/6352a86e4709410195b3cc30" target="_blank">ERD (DbDiagram)</a>
 
 [![Film to Fridge ERD](https://i.ibb.co/CPJQdmG/film-erd.jpg)](https://dbdiagram.io/d/6352a86e4709410195b3cc30)
     </td>
