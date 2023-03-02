@@ -4,6 +4,17 @@
 
 **JSON database required prior to running app:** [https://github.com/rebekahgrandey/film-api](https://github.com/rebekahgrandey/film-api)
 
+<table>
+  <tr>
+    <td>
+<a href="https://ibb.co/42V1Fhk"><img src="https://i.ibb.co/8b7Ym1k/film-user-page.png" alt="film-user-page" border="0"></a>
+    </td>
+    <td>
+    <a href="https://ibb.co/Fn75pkQ"><img src="https://i.ibb.co/ZNTB9RQ/film-recipe.png" alt="film-recipe" border="0"></a>
+    </td>
+  </tr>
+</table>
+
 ## Built With
 
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" width="60"  margin="30" alt="JavaScript" /></a>
