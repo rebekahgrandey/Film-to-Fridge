@@ -4,7 +4,25 @@ Film to Fridge is an app that allows users to make and share recipes from their 
 
 # Project Planning
 
-![Film to Fridge Wireframe](https://ibb.co/KXy7FqH?raw=true)
+<table>
+  <tr>
+    <td valign="top">
+      <a href="https://www.figma.com/file/uQRwpzxMnDd3eSjCPc9V5q/Film-to-Fridge?node-id=0%3A1&t=DG1k2PXvVGU04gee-0">Wireframe (Figma)</a>
+
+[![Film to Fridge Wireframe](https://i.ibb.co/mqpcVJC/film-wireframe.jpg)](https://www.figma.com/file/uQRwpzxMnDd3eSjCPc9V5q/Film-to-Fridge?node-id=0%3A1&t=DG1k2PXvVGU04gee-0)
+      
+   
+  
+
+<td valign="top">
+  <a href="https://dbdiagram.io/d/6352a86e4709410195b3cc30">ERD (DbDiagram)</a>
+
+[![Film to Fridge ERD](https://i.ibb.co/CPJQdmG/film-erd.jpg)](https://dbdiagram.io/d/6352a86e4709410195b3cc30)
+    </td>
+  </tr>
+  </table>
+
+
 
 JSON database required prior to running app: [https://github.com/rebekahgrandey/film-api](https://github.com/rebekahgrandey/film-api)
 
