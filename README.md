@@ -2,6 +2,7 @@
 
 Film to Fridge is an app that allows users to make and share recipes from their favorite movies and TV shows. The user can create their own recipe and add it to the JSON database. The user can edit or delete their own recipe. All recipes in the database, viewable by all users, are categorized both alphabetically and by recipe type (food, drink, dessert).
 
+JSON database required prior to running app: [https://github.com/rebekahgrandey/film-api](https://github.com/rebekahgrandey/film-api)
 
 ## Built With
 
@@ -12,7 +13,6 @@ Film to Fridge is an app that allows users to make and share recipes from their 
 <a href="https://getbootstrap.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/bootstrap-colored.svg" width="60" alt="Bootstrap" /></a>
 <a href="https://www.figma.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/figma-colored.svg" width="60" alt="Figma" /></a>
 
-
 ## Project Planning
 
 <table>
@@ -20,10 +20,7 @@ Film to Fridge is an app that allows users to make and share recipes from their 
     <td valign="top">
       <a href="https://www.figma.com/file/uQRwpzxMnDd3eSjCPc9V5q/Film-to-Fridge?node-id=0%3A1&t=DG1k2PXvVGU04gee-0" target="_blank">Wireframe (Figma)</a>
 
-[![Film to Fridge Wireframe](https://i.ibb.co/mqpcVJC/film-wireframe.jpg)](https://www.figma.com/file/uQRwpzxMnDd3eSjCPc9V5q/Film-to-Fridge?node-id=0%3A1&t=DG1k2PXvVGU04gee-0)
-      
-   
-  
+[![Film to Fridge Wireframe](https://i.ibb.co/mqpcVJC/film-wireframe.jpg)](https://www.figma.com/file/uQRwpzxMnDd3eSjCPc9V5q/Film-to-Fridge?node-id=0%3A1&t=DG1k2PXvVGU04gee-0) 
 
 <td valign="top">
   <a href="https://dbdiagram.io/d/6352a86e4709410195b3cc30" target="_blank">ERD (DbDiagram)</a>
@@ -33,9 +30,6 @@ Film to Fridge is an app that allows users to make and share recipes from their 
   </tr>
   </table>
 
-
-
-JSON database required prior to running app: [https://github.com/rebekahgrandey/film-api](https://github.com/rebekahgrandey/film-api)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
