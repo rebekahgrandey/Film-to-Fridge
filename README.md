@@ -47,11 +47,7 @@
 
 It's simple.
 
-* First, fork this repo.
-
-* Next, go to **Your Repositories** and click on the Film to Fridge forked repo.
-
-* On the upper right, press the blue **Code** button, select SSH (you can use HTTPS or GitHub CLI as well but this process will differ), and hit the **copy** button. The URL should look something like **`git@github.com:YOUR-USERNAME/film-to-fridge.git`**
+* On the upper right of this repo, press the blue **Code** button, select SSH (you can use HTTPS or GitHub CLI as well but this process will differ), and hit the **copy** button. The URL should look something like **`git@github.com:YOUR-USERNAME/film-to-fridge.git`**
 
 * Paste the URL into your terminal under the directory in which you'd like this new folder to be located.
 
@@ -68,5 +64,7 @@ npm run start
 ```
 
 You should be able to access the application at `http://localhost:3000`.
+
+_..and you're good to go!_
 
 This project is built with React.
