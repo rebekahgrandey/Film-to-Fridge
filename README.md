@@ -47,9 +47,11 @@
 
 It's simple.
 
-* On the upper right of this repo, press the blue **Code** button, select SSH (you can use HTTPS or GitHub CLI as well but this process will differ), and hit the **copy** button. The URL should look something like **`git@github.com:YOUR-USERNAME/film-to-fridge.git`**
+* Press the blue **Code** button for this repo, select SSH (you can use HTTPS or GitHub CLI as well but this process will differ), and hit the **copy** button. The URL should look something like **`git@github.com:YOUR-USERNAME/film-to-fridge.git`**
 
-* Paste the URL into your terminal under the directory in which you'd like this new folder to be located.
+* In your terminal, be sure to 'cd' into the directory in which you'd like this new folder to be located.
+
+* Once you're there, type **`git clone`** followed by the URL you copied in the previous step.
 
 * Next, be sure to install dependencies:
 
@@ -57,7 +59,7 @@ It's simple.
 npm install
 ```
 
-Boot up a server:
+* Boot up a server:
 
 ```
 npm run start
